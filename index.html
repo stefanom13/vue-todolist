@@ -12,24 +12,19 @@
 <body>
     
     <section id="app">
+
         <div class="contTitle">
             <h1>Lista Boolean</h1>
         </div>
         <header class="inputList">
-            <input type="text" name="" id="">
-            <input type="button" value="aggiungi">
+            <input type="text">
+            <input type="button" value="aggiungi" >
         </header>
 
         <main class="listWrapper">
             <ul class="todoList">
-                <li class="todo">
-                    fare la spesa
-                    <!-- <i class="fa-solid fa-circle-check"></i> -->
-                    <i class="fa-solid fa-circle-xmark"></i>
-                </li>
-                <li class="todo">
-                    fare la spesa
-                    <!-- <i class="fa-solid fa-circle-check"></i> -->
+                <li v-for="element in listTodo" class="todo">
+                    {{ element.testo }}
                     <i class="fa-solid fa-circle-xmark"></i>
                 </li>
             </ul>

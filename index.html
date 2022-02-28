@@ -17,19 +17,21 @@
             <h1>Lista Boolean</h1>
         </div>
         <header class="inputList">
-            <input type="text">
-            <input type="button" value="aggiungi" >
+            <input type="text" v-model="newTodo" @keyup.enter="addTodo">
+            <input type="button" value="aggiungi" @click="addTodo" >
         </header>
 
         <main class="listWrapper">
             <ul class="todoList">
-                <li v-for="element in listTodo" class="todo">
-                    {{ element.testo }}
-                    <i class="fa-solid fa-circle-xmark"></i>
+                <li v-for="(element, index) in listTodo" class="todo" :class="element.done ? 'done': '' ">
+                    <span @click="toggle(index)"> {{ element.testo }} </span>
+                    <div>
+                        <i class="fa-solid fa-circle-xmark" @click="deleteTodo(index)"></i>
+                    </div>
                 </li>
             </ul>
         </main>
-
+        
 
 
     </section>
